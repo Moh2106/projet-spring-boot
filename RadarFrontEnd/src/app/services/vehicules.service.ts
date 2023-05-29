@@ -14,4 +14,8 @@ export class VehiculesService {
   getAllVehicule() : Observable<Vehicule[]>{
     return this.http.get<Vehicule[]>("http://localhost:8888/IMMATRICULATION-SERVICE/vehicules")
   }
+
+  deleteVehicule(id : number): Observable<any>{
+    return this.http.delete("http://localhost:8888/IMMATRICULATION-SERVICE/vehicules/"+id)
+  }
 }

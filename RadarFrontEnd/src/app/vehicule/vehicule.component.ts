@@ -33,4 +33,18 @@ export class VehiculeComponent implements OnInit{
 
   }
 
+  deleteVehicule(id : number){
+    let conf = confirm("Are you sure ?")
+    
+    if(conf === false) return;
+    this.vehiculeService.deleteVehicule(id).subscribe({
+      next : () => {
+
+      },
+      error : error => {
+        console.error(error);
+      }
+    })
+  }
+
 }
