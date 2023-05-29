@@ -39,7 +39,7 @@ export class VehiculeComponent implements OnInit{
     if(conf === false) return;
     this.vehiculeService.deleteVehicule(id).subscribe({
       next : () => {
-
+        this.getAllVehicules()
       },
       error : error => {
         console.error(error);
